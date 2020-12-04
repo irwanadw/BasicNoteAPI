@@ -6,9 +6,17 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Irwan Ardiansyah",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irwanadw/BasicNoteAPI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/irwanadw/BasicNoteAPI/issues"
+  },
+  "homepage": "https://github.com/irwanadw/BasicNoteAPI#readme"
 }
