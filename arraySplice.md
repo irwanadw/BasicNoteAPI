@@ -34,3 +34,5 @@ so, the full syntax is..
 
 *console.log(weight)*
 
+## reference
+[text](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)

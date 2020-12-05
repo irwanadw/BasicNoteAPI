@@ -39,4 +39,6 @@ function selectWeight(weight){
 }
 console.log(weight.findIndex(selectWeight))
 
+
+## reference
 [text](https://www.w3schools.com/jsref/jsref_findindex.asp)
