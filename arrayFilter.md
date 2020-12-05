@@ -14,7 +14,8 @@ so we want to select weight data that is over 60 kilograms
 We can solve it by using an array.filter(). We write a function to select weight data like this
 *function selectWeight(weight){
     return weight > 60;
-}*
+}
+console.log(weight.filter(selectWeight))*
 
 *return* that mean we ask for responses the array that over 60 kg.
 
@@ -26,5 +27,6 @@ const weight = ["60","67","45","50","80","78","73","55"];
 function selectWeight(weight){
     return weight > 60;
 }
+console.log(weight.filter(selectWeight))
 
 [reference :](https://www.w3schools.com/jsref/jsref_filter.asp)
