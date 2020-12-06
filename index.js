@@ -43,6 +43,9 @@ const editUser= require('./routes/user/editUser')
 const deleteUser= require('./routes/user/deleteUser')
 const getParamUser= require('./routes/user/getParamUser')
 const getQueryUser= require('./routes/user/getQueryUser')
+
+const login = require('./routes/auth/login')
+const register= require('./routes/auth/register')
 // 👇 use app "use" method to use imported routes as application routes
 app.use(rootRoute)
 app.use(addNote)
@@ -58,6 +61,9 @@ app.use(editUser)
 app.use(deleteUser)
 app.use(getParamUser)
 app.use(getQueryUser)
+
+app.use(login)
+app.use(register)
 /**
  * port is a door to this app, we can access it via browser or
  * postman by typing localhost:<port_number>, just make sure
