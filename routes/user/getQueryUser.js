@@ -4,10 +4,13 @@ const app = express()
 
 app.get('/user/query', (req, res) => {
   // 👇 access search property in query and save it to search variable
-  const name = req.query.name
+  const search = req.query.search
   // 👇 filter notes that includes a same word with the search inserted at request by using "filter" method
-  const foundUser = users.filter((user) => user.user.includes(name))
+  const foundUser = users.filter((user) => user.name.includes(search))
+  // const variabel = databases.filter((path)=>path.properti.includes(query))
+  
   res.send(foundUser)
 })
+
 
 module.exports = app
