@@ -100,7 +100,7 @@ runPromise()
  * Async await is a way to "wait" a promise to resolved, so another code can use the result
  */
 
-// 👇 async function
+// 👇 async await function
 async function runPromiseWithAsync(miliseconds) {
   const timeoutResultAsync = await sendTimeoutPromise(miliseconds) // 👈 to wait a promise to be resolved, type "await" and the result will be placed inside "timeoutResultAsync" 
   // using promise with await 👆 can be also called "await function"
