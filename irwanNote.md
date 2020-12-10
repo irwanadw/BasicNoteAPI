@@ -72,3 +72,12 @@ anonymsu
 
 
 ## bcrypt =mengenskripsi password di database
+
+
+## Knex = Query Builder
+
+## Route dengan 3 parameter. Punya kemampuan untuk menghandle error
+
+## syarat error middleware= harus punya empat parameter,kalo gak empat ga akan jalan. (err,req,res,next)
+
+## yang mengecek error adalah mysql atau database. Kodingan hanya mengecek alurnya saja.
