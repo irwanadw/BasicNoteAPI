@@ -1,19 +1,24 @@
 const express = require('express')
-const notes = require('../../databases/notesDb')
+const noteController = require('../../controllers/noteController')
 const authorize = require('../../middlewares/authorizationMiddleware')
-const { nanoid } = require('nanoid')
+const errorMiddleware = require('../../middlewares/errorMiddleware')
+
 const app = express()
 
 app.use(authorize)
 
-app.post('/note', (req, res) => {
-  const body = req.body
-  const user = req.user
-  body.username = user.username
-  const id = nanoid()
-  body.id = id
-  notes.push(body)
-  res.send(req.body)
+app.post('/note', async (req, res, next) => {
+  const { user, body } = req
+
+  const result = await noteController
+    .add({ userId: user.id, ...body })
+    .catch((error) => {
+      next(error)
+    })
+  if (result)
+    res.send(result)
 })
+
+app.use(errorMiddleware)
 
 module.exports = app
