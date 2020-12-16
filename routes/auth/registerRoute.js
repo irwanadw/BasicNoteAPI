@@ -20,7 +20,7 @@ const app = express.Router()
 
 app.post('/auth/register', async (req, res, next) => {
   const { body } = req
-  const result = await userController.register(body)
+  const result = await userController.register(body) // 👈 this is using userController methods
     .catch((error) => {
       next(error)
     })

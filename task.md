@@ -1,7 +1,6 @@
 # Task
 
-1. Do a research about `JSON Schema` into a file called `JSONSchema.md`
-2. Do a research about `NodeJS MVC architecture` into a file called `NodeMVC.md`
-    > As researching this task, we will see VAST of codestyles, make sure to try  understand them because in real work, we will facing different codestlyes along the way.
+1. Do a research about `javascript OOP` to a file called `javascript OOP.md` 
+    > There will be more OOP concept along the way, make sure to document them all because it importaint for job interviews
 
 Do above tasks inside a folder called `researches`

@@ -1,14 +1,56 @@
-const dbConnection = require("../connections/dbConnection");
-const { nanoid } = require("nanoid");
-const Ajv = require('ajv')
+const BaseModel = require("./baseModel");
+
+class NoteModel extends BaseModel {
+  constructor() {
+    const baseValidatorObj = {
+      type: 'object',
+      additionalProperties: false
+    }
+
+    super('notes', {
+      addSchema: {
+        ...baseValidatorObj,
+        properties: {
+          note: { type: 'string', minLength: 1 },
+          userId: { type: 'string', minLength: 1 }
+        },
+        required: ['note', 'userId']
+      },
+      editSchema: {
+        ...baseValidatorObj,
+        properties: {
+          note: { type: 'string', minLength: 1 },
+          isArchived: { type: 'boolean' },
+        },
+        required: ['note']
+      },
+      querySchema: {
+        ...baseValidatorObj,
+        properties: {
+          id: { type: 'string', minLength: 1 },
+          note: { type: 'string', minLength: 1 },
+          userId: { type: 'string', minLength: 1 },
+        },
+      }
+    })
 
 const ajv = new Ajv()
 const tableName = 'notes'
 
-const baseValidatorObj = {
-  type: 'object',
-  additionalProperties: false
-}
+  /**
+   * The power of OOP inheritance will be shown here, as 
+   * we can see that previously we have basic function like add,
+   * get, edit & remove function, and now they're gone, because
+   * those function already been implemented in baseModel.
+   * 
+   * By doing that, we can create a model that only focused
+   * on custom queries like methods below, and also speed up
+   * the development for creating model that requires basic
+   * methods
+   */
+
+  getLike(columnName, stringName, query) {
+    this.querySchema.validate(query)
 
 const addSchema = {
   compiledSchema: ajv.compile({

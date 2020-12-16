@@ -8,5 +8,3 @@ This project will serve as code example on how to create a basic note API, from 
 ### Scripts
 - `npm start` to run this project
 - `npm run dev` to run this project and automatically restart if there's any file changes
-
-### Next, [OOP (Object Oriented Programming)](https://github.com/nandanugg/BasicNoteAPI/tree/oop-feature)

@@ -11,7 +11,7 @@ app.post('/note', async (req, res, next) => {
   const { user, body } = req
 
   const result = await noteController
-    .add({ userId: user.id, ...body })
+    .add({ userId: user.id, ...body }) // 👈 this is using baseController methods! OOP Inheritance is "gutes Zeug!"
     .catch((error) => {
       next(error)
     })
